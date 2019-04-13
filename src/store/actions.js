@@ -1,7 +1,5 @@
 
 const generateChart = events => (dispatch) => {
-
-  console.log('events', JSON.stringify(events))
   const chartData = events.reduce((acc, event) => {
     if (acc.done) return acc;
     switch (event.type) {

@@ -1,0 +1,36 @@
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 99999;
+}
+.popup_inner {
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    flex-direction: column;
+    top: 25%;
+    bottom: 50%;
+    margin: auto;
+    background: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn {
+    top: 8px;
+    position: absolute;
+    right: 8px;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
