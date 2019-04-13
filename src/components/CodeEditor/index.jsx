@@ -2,7 +2,7 @@ import React from 'react';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
-import 'brace/theme/monokai';
+import 'brace/theme/tomorrow_night';
 
 const CodeEditor = React.forwardRef((props, ref) => (
     <AceEditor
@@ -10,7 +10,7 @@ const CodeEditor = React.forwardRef((props, ref) => (
         style={{width: '100%', height: props.height}}
         placeholder="Placeholder Text"
         mode="javascript"
-        theme="monokai"
+        theme="tomorrow_night"
         name="editor"
         onLoad={props.onLoad}
         onChange={props.onChange}

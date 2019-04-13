@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Chart from 'react-apexcharts';
+import Resizable from 'react-resizable-box';
+
 import { connect } from 'react-redux';
 import { generateChart } from './store/actions';
 
 import CodeEditor from './components/CodeEditor';
-import Resizable from 'react-resizable-box';
-import Chart from 'react-apexcharts'
 import Footer from './components/Footer';
-import Button from './components/Button'
+import Button from './components/Button';
+import Header from './components/Header';
+
 
 class App extends Component {
 
@@ -34,11 +37,11 @@ class App extends Component {
 
   generateChart = () => {
     const { text } = this.state;
-    const events = text.split('\n').map( row => {
+    const events = text.split('\n').map(row => {
       let obj = {};
-      try{
+      try {
         eval('obj = ' + row)
-      }catch(e){ }
+      } catch (e) { }
       return obj;
     });
 
@@ -48,12 +51,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header title="Douglas Castro's Challenge" />
 
         <div className="container">
           <Resizable
             width='100%'
             height={this.state.height}
-            maxHeight={500}
+            maxHeight={460}
             minHeight={200}
             onResize={this.onResize}
           >
@@ -66,7 +70,13 @@ class App extends Component {
 
           </Resizable>
 
-          <Chart options={this.props.chart.options} series={this.props.chart.series} type="line" width={800} height={320} />
+          <Chart 
+            options={this.props.chart.options} 
+            series={this.props.chart.series} 
+            type="line" 
+            width={800} 
+            height={300} 
+          />
 
         </div>
 
@@ -76,7 +86,7 @@ class App extends Component {
             style={{ marginLeft: '12px' }}
             onClick={this.generateChart}
           >
-            generate chart
+            GENERATE CHART
           </Button>
         </Footer>
       </div>
