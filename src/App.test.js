@@ -33,7 +33,7 @@ it('test action creator', () => {
   });
 });
 
-it('test action creator', () => {
+it('test if chart series has been populated correctly', () => {
   const events = [{ "type": "start", "timestamp": 123, "select": ["min_response_time", "max_response_time"], "group": ["os", "browser"] }, { "type": "span", "timestamp": 123, "start": 20, "end": 100 }, { "type": "data", "timestamp": 23, "os": "linux", "browser": "chrome", "min_response_time": 0.11, "max_response_time": 0.2 }, { "type": "data", "timestamp": 23, "os": "linux", "browser": "firefox", "min_response_time": 0.3, "max_response_time": 0.33 }, { "type": "data", "timestamp": 23, "os": "windows", "browser": "chrome", "min_response_time": 0.4, "max_response_time": 0.6 }]
   const dispatch = jest.fn();
   generateChart(events)(dispatch);
