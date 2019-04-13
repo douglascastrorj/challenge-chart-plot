@@ -1,6 +1,7 @@
 
 const generateChart = events => (dispatch) => {
 
+  console.log('events', JSON.stringify(events))
   const chartData = events.reduce((acc, event) => {
     if (acc.done) return acc;
     switch (event.type) {
@@ -36,12 +37,14 @@ const generateChart = events => (dispatch) => {
     return acc;
   }, { chart: {}, done: false });
 
-  // console.log(chartData)
-
-  dispatch({
+  const action = {
     type: 'generate_chart',
     payload: chartData
-  })
+  };
+
+  dispatch(action);
+  return action;
+  
 }
 
 export {generateChart};
