@@ -1,0 +1,7 @@
+.footer {
+    display: flex;
+    padding: 12px 24px;
+    background: #DDDEE1;
+    margin-top:auto;
+    width: -webkit-fill-available;
+}
